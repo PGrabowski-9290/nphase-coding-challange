@@ -24,4 +24,16 @@ public class ShoppingCartServiceTest {
         Assertions.assertEquals(result, BigDecimal.valueOf(12.0));
     }
 
+    @Test
+    public void calculatePriceWithQuantityDiscount(){
+        ShoppingCart cart = new ShoppingCart(Arrays.asList(
+                new Product("Tea", BigDecimal.valueOf(5.0), 5),
+                new Product("Coffee", BigDecimal.valueOf(3.5), 3)
+        ));
+
+        BigDecimal result = service.calculateTotalPrice(cart);
+
+        Assertions.assertEquals(result, BigDecimal.valueOf(33.0));
+    }
+
 }

@@ -24,4 +24,8 @@ public class Product {
     public int getQuantity() {
         return quantity;
     }
+
+    public BigDecimal calculateTotalPrice(){
+        return this.getPricePerUnit().multiply(BigDecimal.valueOf(this.getQuantity()));
+    }
 }
